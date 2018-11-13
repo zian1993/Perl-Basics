@@ -1,0 +1,4 @@
+for $true (@hatefoods)
+{
+	print $true,"\n";
+}
