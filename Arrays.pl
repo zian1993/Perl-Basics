@@ -21,8 +21,12 @@ print "\n";
 
 #Moving value of last element to first element for the disliked food array.
 
-$temp = @hatefoods[scalar @hatefoods-1];
-splice(@hatefoods, 0, 1, ($temp));
+#First saving and deleting the value of the last element of the array
+$temp = pop (@hatefoods);
+
+#Now saving the value of the last element as the first element of the array
+#and shifting everything else down.
+unshift (@hatefoods, $temp);
 
 #Printing out the first and last elements of each array
 
@@ -43,7 +47,7 @@ print "Please enter another food you dislike: ";
 $userdislike = <>;
 
 #Adding user entry to the dislike array
-push @hatefoods, $userdislike;
+push (@hatefoods, $userdislike);
 
 #Printing the last two elements of the changed array
 print "\n";
